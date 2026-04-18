@@ -15,29 +15,39 @@ namespace Homework_12_1_5
     {
         public void ShowAds(List<User> users, string MyName)
         {
+            User foundUser = null;
             foreach (User user in users)
             {
-                if (user.Name == MyName && user.IsPremium == true)
+                if (user.Name == MyName)
                 {
-                    Console.WriteLine($"\nЗдравствуйте, {user.Name}. Спасибо что оформили премиум подписку!");
+                    foundUser = user;
+                    break;                    
                 }
-                else //Если не зарегистрирован = гость = нет премиума
-                {
-                        Console.WriteLine($"\nЗдравствуйте, {MyName}!");
-                        Console.WriteLine("Посетите наш новый сайт с бесплатными играми free.games.for.a.fool.com");
-                        // Остановка на 1 с
-                        Thread.Sleep(1000);
+            }
 
-                        Console.WriteLine("Купите подписку на МыКомбо и слушайте музыку везде и всегда.");
-                        // Остановка на 2 с
-                        Thread.Sleep(2000);
+            if (foundUser != null && foundUser.IsPremium)
+            {
+                Console.WriteLine($"\nЗдравствуйте, {foundUser.Name}. Спасибо что оформили премиум подписку!");
+            }
+            else
+            {
+                Console.WriteLine($"\nЗдравствуйте, {MyName}!");
+                ShowAds();                    
+            }
 
-                        Console.WriteLine("Оформите премиум-подписку на наш сервис, чтобы не видеть рекламу.");
-                        // Остановка на 3 с
-                        Thread.Sleep(3000);
-                }
-                break;
+            static void ShowAds()
+            {
+                Console.WriteLine("Посетите наш новый сайт с бесплатными играми free.games.for.a.fool.com");
+                Thread.Sleep(1000);
+
+                Console.WriteLine("Купите подписку на МыКомбо и слушайте музыку везде и всегда.");
+                Thread.Sleep(2000);
+
+                Console.WriteLine("Оформите премиум-подписку на наш сервис, чтобы не видеть рекламу.");
+                Thread.Sleep(3000);
             }
         }
+
+    }
     }
 }
