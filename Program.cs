@@ -14,8 +14,20 @@ namespace Homework_12_1_5
                 new User{Login="B", Name = "Boris", IsPremium = false},
                 new User{Login="C", Name = "Charly", IsPremium = false}
             };
-            Greetings greetings = new Greetings();
-            greetings.ShowAds(users);
+            while (true) {
+                Console.WriteLine("\nВведите ваше имя: ");
+                string MyName = Console.ReadLine()?.Trim() ?? "";
+
+                if(string.IsNullOrEmpty(MyName))
+                {
+                    break;                    
+                }
+
+                Greetings greetings = new Greetings();
+                greetings.ShowAds(users, MyName);
+            }
+
+            
         }
     }
 }
