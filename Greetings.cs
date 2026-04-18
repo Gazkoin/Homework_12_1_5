@@ -21,10 +21,11 @@ namespace Homework_12_1_5
                 if (user.Name == MyName)
                 {
                     foundUser = user;
-                    break;                    
+                    break;                   
                 }
             }
 
+            // Основная логика
             if (foundUser != null && foundUser.IsPremium)
             {
                 Console.WriteLine($"\nЗдравствуйте, {foundUser.Name}. Спасибо что оформили премиум подписку!");
@@ -32,24 +33,20 @@ namespace Homework_12_1_5
             else
             {
                 Console.WriteLine($"\nЗдравствуйте, {MyName}!");
-                ShowAds();                    
-            }
-
-            static void ShowAds()
-            {
-                Console.WriteLine("Посетите наш новый сайт с бесплатными играми free.games.for.a.fool.com");
-                Thread.Sleep(1000);
-
-                Console.WriteLine("Купите подписку на МыКомбо и слушайте музыку везде и всегда.");
-                Thread.Sleep(2000);
-
-                        Console.WriteLine("Оформите премиум-подписку на наш сервис, чтобы не видеть рекламу.");
-                        // Остановка на 3 с
-                        Thread.Sleep(3000);
-                }
-                break;
+                ShowAds();                   
             }
         }
-    }
-    
+                
+        static void ShowAds()
+        {
+            Console.WriteLine("Посетите наш новый сайт с бесплатными играми free.games.for.a.fool.com");
+            Thread.Sleep(1000);
+
+            Console.WriteLine("Купите подписку на МыКомбо и слушайте музыку везде и всегда.");
+            Thread.Sleep(2000);
+
+            Console.WriteLine("Оформите премиум-подписку на наш сервис, чтобы не видеть рекламу.");
+            Thread.Sleep(3000);
+        }
+    }    
 }
