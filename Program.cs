@@ -11,7 +11,7 @@ namespace Homework_12_1_5
             List<User> users = new List<User>()
             {
                 new User{Login="A", Name = "Andrey", IsPremium = true},
-                new User{Login="B", Name = "Boris", IsPremium = false},
+                new User{Login="B", Name = "Boris", IsPremium = true},
                 new User{Login="C", Name = "Charly", IsPremium = false}
             };
             while (true) {
